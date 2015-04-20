@@ -1,0 +1,40 @@
+doctype html
+html(lang='en', ng-app='polls')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width',
+        initial-scale=1, user-scalable='no')
+        title= 'Multi tenant Model'
+        script(src='/jslibs/angular.min.js')
+        script(src='/javascripts/angControllers/app.js')
+        script(src='/javascripts/angControllers/main.js')
+        script(src='/jslibs/jquery.min.js')
+        script(src='/jslibs/angular-route.min.js')
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css')
+        body
+            #content
+                <div class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+                <div class="container">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="images/expose-logo.png" alt="ProjectTracker PRO" height="17px" /> </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                <li class="active"><a href="#home">Home</a></li>
+                <li><a href="#services">Tracker</a></li>
+                <li><a href="#features">Reports</a></li>
+                <li><a href="#pricing">Administration</a></li>
+                </ul>
+                </div>
+                <!--/.navbar-collapse -->
+                </div>
+                </div>
+        block content
+
