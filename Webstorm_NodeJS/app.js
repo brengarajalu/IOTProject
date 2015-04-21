@@ -36,7 +36,8 @@ app.use(cookieParser());
 app.use('/', routes);
 app.use('/users', users);
 //app.use('/public/partialviews', express.static(__dirname + '/public/partialviews'));
-app.use(express.static(path.join(__dirname, 'public/partialviews')));
+app.use(express.static(path.join(__dirname, 'public/angularHTMLPartials')));
+app.use(express.static(path.join(__dirname, 'public/stylesheets')));
 
 /****newly added */
 // Main App Page
