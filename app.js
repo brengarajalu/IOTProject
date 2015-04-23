@@ -69,6 +69,13 @@ app.get('/ang/:partial', function (req, res){
     res.sendFile(path.join(__dirname, '/public/angularHTMLPartials/'+partial));
 
 });
+
+app.get('/public/data/:partial', function (req, res){
+    var partial = req.params.partial+".tsv"
+    console.log("hit the route");
+    res.sendFile(path.join(__dirname, '/public/images/'+partial));
+
+});
 /****newly added */
 
 

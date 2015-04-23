@@ -11,12 +11,11 @@
 
 angular.module('polls',  ['ngTouch', 'ui.grid','ui.grid.edit', 'ui.grid.rowEdit', 'ui.grid.cellNav'], function () {
 
-}).controller('WaterfallCtrl', function ($scope) {
-
+}).controller('WaterfallCtrl', function ($scope,angService) {
 
     $scope.createTask= function()
     {
-        alert("task created");
+        var task=angService.CreateTask();
 
     }
 

@@ -12,8 +12,9 @@ html(lang='en', ng-app='polls')
         link(rel='stylesheet', href='/stylesheets/bootstrap-datetimepicker.css')
         link(rel='stylesheet', href='/stylesheets/ui-grid-unstable.css')
         script(src='/jslibs/angular.min.js')
-        script(src='/javascripts/angControllers/app.js')
+        //script(src='/javascripts/angControllers/app.js')
         script(src='/javascripts/angControllers/main.js')
+        script(src='/javascripts/angularServices/RESTAPIService.js')
         script(src='/javascripts/common.js')
         script(src='/jslibs/jquery.min.js')
         script(src='/jslibs/ui-grid-unstable.js')
@@ -41,7 +42,7 @@ html(lang='en', ng-app='polls')
 
                 $('#tabs').bind('change', function(e) {
 
-                       alert("changed");
+                       //alert("changed");
                 });
 
             });
