@@ -6532,6 +6532,7 @@ button.close {
   background-color: #4a9fe9;
 }
 
+<<<<<<< HEAD
 .grid {
   width: 1100px;
   height: 250px;
@@ -6644,4 +6645,14 @@ body .modal-admin {
   width: 850px;
   /* must be half of the width, minus scrollbar on the left (30px) */
   margin-left: -375px;
+=======
+div.waterfallcontainer
+{
+    margin-top: 80px;
+    margin-left:50px;
+}
+.grid {
+  width: 1100px;
+  height: 250px;
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 }

@@ -9,6 +9,7 @@
  */
 // Managing the poll list
 
+<<<<<<< HEAD
 angular.module('polls').controller('WaterfallCtrl', function ($scope,angService) {
 
     //ALL GLOBAL DECLARATIONS
@@ -177,10 +178,44 @@ angular.module('polls').controller('WaterfallCtrl', function ($scope,angService)
             BootstrapDialog.alert('Task Created Succesfully');
             $( '#createTaskModal' ).modal('hide').data( 'bs.modal', null );
         });
+=======
+angular.module('polls',  ['ngTouch', 'ui.grid','ui.grid.edit', 'ui.grid.rowEdit', 'ui.grid.cellNav'], function () {
+
+}).controller('WaterfallCtrl', function ($scope,angService) {
+
+    $scope.createTask= function()
+    {
+        var task=angService.CreateTask();
+
+    }
+
+    $scope.createResource= function()
+    {
+        alert("Resource created");
+
+    }
+
+    $scope.createProject= function()
+    {
+        alert("Project created");
+
+    }
+
+    $scope.viewTasks= function()
+    {
+        alert("Project created");
+
+    }
+
+    $scope.viewProgress= function()
+    {
+        alert("Project created");
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 
     }
 
 
+<<<<<<< HEAD
     $scope.ShowCreateTask=function()
     {
         $('#createTaskModal').modal('show');
@@ -455,6 +490,16 @@ angular.module('polls').controller('WaterfallCtrl', function ($scope,angService)
     }
     $scope.viewProgress();
 
+=======
+
+    $scope.tasks = [
+        {
+            text: "Task1"
+        }, {
+            text: "Task2"
+        }
+    ]
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 
     $scope.myData = [
         {
@@ -467,10 +512,24 @@ angular.module('polls').controller('WaterfallCtrl', function ($scope,angService)
 
     ];
 
+<<<<<<< HEAD
 
 });
 
 /*.controller('KanbanCtrl', function ($scope) {
+=======
+    $scope.showalert = function()
+    {
+        alert("hellow")
+
+    };
+    //$scope.poll = {};
+    $scope.vote = function() {};
+    //$scope.polls = [];
+})
+
+.controller('KanbanCtrl', function ($scope) {
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 
         $scope.poll = {};
         $scope.vote = function() {};
@@ -478,7 +537,10 @@ angular.module('polls').controller('WaterfallCtrl', function ($scope,angService)
 
 .controller('ScrumCtrl', function ($scope) {
 
+<<<<<<< HEAD
         alert("hi");
+=======
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
         $scope.poll = {
             question: '',
             choices: [{ text: '' }, { text: '' }, { text: '' }]
@@ -487,7 +549,11 @@ angular.module('polls').controller('WaterfallCtrl', function ($scope,angService)
             $scope.poll.choices.push({ text: '' });
         };
         $scope.createPoll = function() {};
+<<<<<<< HEAD
 }) */
+=======
+})
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 
 
 

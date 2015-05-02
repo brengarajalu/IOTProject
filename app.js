@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 var bodyParser = require('body-parser');
+=======
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+<<<<<<< HEAD
 var mongoose= require('mongoose');
 var routes = require('./routes');
 var users = require('./routes/users');
@@ -517,6 +521,21 @@ app.post("/api/:tenantid/view-progress", function(req, res){
 
 
 //ROUTING STARTS
+=======
+var bodyParser = require('body-parser');
+
+var routes = require('./routes');
+var users = require('./routes/users');
+
+var http = require('http');
+var path = require('path');
+
+routes.index=require('./routes/index')
+
+
+var app = express();
+
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -539,9 +558,12 @@ app.use('/users', users);
 //app.use('/public/partialviews', express.static(__dirname + '/public/partialviews'));
 app.use(express.static(path.join(__dirname, 'public/angularHTMLPartials')));
 app.use(express.static(path.join(__dirname, 'public/stylesheets')));
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, 'public/stylesheets/font-awesome')));
 app.use(express.static(path.join(__dirname, 'public/stylesheets/font-awesome/css')));
 app.use(express.static(path.join(__dirname, 'public/stylesheets/font-awesome/font')));
+=======
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 
 /****newly added */
 // Main App Page
@@ -560,6 +582,7 @@ app.get('/models/model/:name', function (req, res) {
     res.render('partials/' + name);
 });
 
+<<<<<<< HEAD
 app.get('/partials/:model/:name', function (req, res) {
     console.log("got hit in render");
     var name = req.params.name;
@@ -570,6 +593,8 @@ app.get('/partials/:model/:name', function (req, res) {
 
 //http://localhost:3000/partials/Waterfall/createUpdateTask.html Failed to load resource: the server responded with a status of 404 (Not Found)
 
+=======
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
 // Handle /Models
 app.get('/models/:name', function (req, res) {
     var name = req.params.name;

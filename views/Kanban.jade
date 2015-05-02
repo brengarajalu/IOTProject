@@ -1,5 +1,6 @@
 extends layout
 block content
+<<<<<<< HEAD
     body(ng-controller='KanbanCtrl').
     <div id="tabs_scrum">
     <div  class="col-md-10">
@@ -8,10 +9,49 @@ block content
     <ul class="nav nav-tabs" id="myTab">
     <li><a href="#tab1kanbanprimary" data-toggle="tab">Board</a></li>
     <li><a href="#tab3kanbanprimary" data-toggle="tab">View Board</a></li>
+=======
+    body(ng-controller='PollListCtrl').
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+        div.navbar-header
+            a.navbar-brand(href='#/polls')= title
+            <div class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+            <div class="container">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand" href="#">ProjectTracker PRO</div>
+            </div>
+            <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/">Tracker</a></li>
+            <li><a href="#features">Reports</a></li>
+            <li><a href="#pricing">Administration</a></li>
+            </ul>
+            </div>
+            <!--/.navbar-collapse -->
+            </div>
+            </div>
+    div.waterfallcontainer
+    <div id="tabs">
+    <div  class="col-md-8">
+    <div class="panel with-nav-tabs panel-primary">
+    <div class="panel-heading">
+    <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#tab1primary" data-toggle="tab">Project</a></li>
+    <li><a href="#tab2primary" data-toggle="tab">Task</a></li>
+    <li><a href="#tab3primary" data-toggle="tab">Resources</a></li>
+    <li><a href="#tab4primary" data-toggle="tab">View Tasks</a></li>
+    <li><a href="#tab5primary" data-toggle="tab">View Progress</a></li>
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
     </ul>
     </div>
     <div class="panel-body">
     <div class="tab-content">
+<<<<<<< HEAD
     <div class="tab-pane fade in active"  id="tab1kanbanprimary">
     include partials/Kanban/CreateBoard.html
     </div>
@@ -25,3 +65,26 @@ block content
     </div>
     </div>
 div(ng-view)
+=======
+    <div class="tab-pane fade in active"  id="tab1primary">
+    include partials/Waterfall/createProject.html
+    </div>
+    <div class="tab-pane fade in active" id="tab2primary">
+    include partials/Waterfall/createUpdateTask.html
+    </div>
+    <div class="tab-pane fade in active" id="tab3primary">
+    include partials/Waterfall/createUpdateResources.html
+    </div>
+    <div class="tab-pane fade in active" id="tab4primary">
+    include partials/Waterfall/ViewTasks.html
+    </div>
+    <div class="tab-pane fade in active" id="tab5primary">
+    include partials/Waterfall/ViewProgress.html
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+div(ng-view)
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190

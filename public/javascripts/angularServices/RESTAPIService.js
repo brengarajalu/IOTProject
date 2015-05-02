@@ -2,11 +2,16 @@
  * Created by brengarajulu on 4/23/2015.
  */
 //All Mongo interactions should come here
+<<<<<<< HEAD
 angular.module('polls').factory('angService',['$http', function ($http) {
     var data={};
     var tenantbaseUrl="/api/tenant/";
     var savebaseUrl="/api/";
 
+=======
+angular.module('polls').factory('angService', function () {
+    var data={};
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
     data.CreateProject=function(){
         alert("task created");
 
@@ -20,6 +25,7 @@ angular.module('polls').factory('angService',['$http', function ($http) {
         alert("task created");
 
     }
+<<<<<<< HEAD
 
     return {
         GetTemplateFields: function (templateId) {
@@ -205,3 +211,11 @@ angular.module('polls').factory('angService',['$http', function ($http) {
 
    // return angService;
 }]);
+=======
+    data.ViewTasks=function(){
+        alert("task created");
+
+    }
+    return data;
+});
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190

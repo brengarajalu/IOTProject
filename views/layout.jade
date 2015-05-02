@@ -7,6 +7,7 @@ html(lang='en', ng-app='polls')
         title= 'Multi tenant Model'
 
         link(rel='stylesheet', href='/stylesheets/custom.css')
+<<<<<<< HEAD
         link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
         //link(rel='stylesheet', href='/stylesheets/datepicker.css')
         link(rel='stylesheet', href='/stylesheets/font-awesome/css/font-awesome.min.css')
@@ -23,11 +24,21 @@ html(lang='en', ng-app='polls')
 
 
 
+=======
+        link(rel='stylesheet', href='/stylesheets/datepicker.css')
+        link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/stylesheets/bootstrap-datetimepicker.css')
+        link(rel='stylesheet', href='/stylesheets/ui-grid-unstable.css')
+        script(src='/jslibs/angular.min.js')
+        //script(src='/javascripts/angControllers/app.js')
+        script(src='/javascripts/angControllers/main.js')
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
         script(src='/javascripts/angularServices/RESTAPIService.js')
         script(src='/javascripts/common.js')
         script(src='/jslibs/jquery.min.js')
         script(src='/jslibs/ui-grid-unstable.js')
         script(src='/jslibs/bootstrap-datetimepicker.min.js')
+<<<<<<< HEAD
         script(src='/jslibs/angular-date-picker-polyfill.min.js')
         script(src='//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.js')
 
@@ -38,6 +49,12 @@ html(lang='en', ng-app='polls')
         script(src='//code.jquery.com/ui/1.11.2/jquery-ui.js')
         script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js')
 
+=======
+        script(src='/jslibs/angular-route.min.js')
+        script(src='/jslibs/ui-bootstrap.min.js')
+        script(src='//code.jquery.com/ui/1.11.2/jquery-ui.js')
+        script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-touch.js')
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
         script(src='http://d3js.org/d3.v3.min.js')
 
 
@@ -50,6 +67,7 @@ html(lang='en', ng-app='polls')
 
                 var active = 0;
                 if (true) // check the condition
+<<<<<<< HEAD
                     active = 0; // tab index is zero based. use -1 for last tab
                 $("#tabs").tabs({
                     active: active
@@ -57,6 +75,13 @@ html(lang='en', ng-app='polls')
                 $("#tabs_scrum").tabs({
                     active: active
                 });
+=======
+                    active = 2; // tab index is zero based. use -1 for last tab
+                $("#tabs").tabs({
+                    active: active
+                });
+
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
                 $('#tabs').bind('change', function(e) {
 
                        //alert("changed");
@@ -66,6 +91,7 @@ html(lang='en', ng-app='polls')
 
 
         body
+<<<<<<< HEAD
         nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
             div.navbar-header
                 a.navbar-brand(href='#/polls')= title
@@ -113,6 +139,8 @@ html(lang='en', ng-app='polls')
                 </div>
                 div
             !=body
+=======
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
             #content
 
         block content
