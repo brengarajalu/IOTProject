@@ -7,8 +7,8 @@
  *
  * Main module of the application.
  */
-angular.module('polls',[])
-    .config(['$routeProvider', function($routeProvider) {
+angular.module('polls',['ngTouch', 'ui.grid','ui.grid.edit', 'ui.grid.rowEdit', 'ui.grid.cellNav']);
+/*angular.module('polls').config(['$routeProvider', function($routeProvider) {
         $routeProvider.
             when('/ang/Waterfall/ViewTasks', { templateUrl: '/public/partialviews/list', controller:
                 WaterfallCtrl}).
@@ -17,4 +17,4 @@ angular.module('polls',[])
             when('/ang/new', { templateUrl: '/public/partialviews/new', controller:
                 PollNewCtrl}).
             otherwise({ redirectTo: '/' });
-    }]);
+    }]); */

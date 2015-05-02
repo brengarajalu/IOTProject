@@ -1,27 +1,74 @@
-<div style="margin-top: 10px"> </div>
-<h1>Create Resources</h1>
-<form class="form-horizontal">
+<div>
+    <h1>Create Resource</h1>
+    <form class="form-horizontal">
+        <div>
+            <div ng-repeat="field in waterfallFields | filter:{module: 'Resource'} track by $index">
 
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="inputName">Name:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="inputName" placeholder="name">
+                <div ng-show="field.type=='text'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter text">
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="field.type=='number'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <input type="number" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value1">
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="field.type=='date'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <input type="date" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter">
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="field.type=='email'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <input type="email" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div ng-show="field.type=='list'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <select ng-model="field.value"  class="form-control" id="{{field.fieldName}}{{field.fieldId}}" ng-options="i.Resource_name for i in Resources"/>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div ng-show="field.type==''">
+                    <div class="form-group">
+                        <div class="col-xs-9">
+                            <input type="text" style="display: none" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value2">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <input type="submit" class="btn btn-primary" ng-click="CreateResource()" value="Create">
+                    <input type="reset" class="btn btn-default" value="Reset">
+                </div>
+            </div>
+
         </div>
-    </div>
+    </form>
 
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="inputEmail">Email:</label>
-        <div class="col-xs-9">
-            <input type="email" class="form-control" id="inputEmail" placeholder="email">
-        </div>
-    </div>
-
-    <br>
-    <div class="form-group">
-        <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-primary" value="Create">
-            <input type="reset" class="btn btn-default" value="Reset">
-        </div>
-    </div>
-
-</form>
+</div>

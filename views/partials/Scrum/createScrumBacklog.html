@@ -1,101 +1,58 @@
-
-<div style="margin-top: 100px"> </div>
-<h1>Create Scrum</h1>
+<div>
+<h1>Create/Edit Backlog</h1>
 <form class="form-horizontal">
+   <div>
+    <div ng-repeat="field in ScrumFields | filter:{module: 'Backlog'} track by $index">
 
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="inputPassword">Password:</label>
-        <div class="col-xs-9">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        <div ng-show="field.type=='text'">
+            <div class="form-group">
+                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter text">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="confirmPassword">Confirm Password:</label>
-        <div class="col-xs-9">
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="firstName">First Name:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="firstName" placeholder="First Name">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="lastName">Last Name:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="lastName" placeholder="Last Name">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="phoneNumber">Phone:</label>
-        <div class="col-xs-9">
-            <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone Number">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Date of Birth:</label>
-        <div class="col-xs-3">
-            <select class="form-control">
-                <option>Date</option>
-            </select>
-        </div>
-        <div class="col-xs-3">
-            <select class="form-control">
-                <option>Month</option>
-            </select>
-        </div>
-        <div class="col-xs-3">
-            <select class="form-control">
-                <option>Year</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="postalAddress">Address:</label>
-        <div class="col-xs-9">
-            <textarea rows="3" class="form-control" id="postalAddress" placeholder="Postal Address"></textarea>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3" for="ZipCode">Zip Code:</label>
-        <div class="col-xs-9">
-            <input type="text" class="form-control" id="ZipCode" placeholder="Zip Code">
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-xs-3">Gender:</label>
-        <div class="col-xs-2">
-            <label class="radio-inline">
-                <input type="radio" name="genderRadios" value="male"> Male
-            </label>
-        </div>
-        <div class="col-xs-2">
-            <label class="radio-inline">
-                <input type="radio" name="genderRadios" value="female"> Female
-            </label>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-xs-offset-3 col-xs-9">
-            <label class="checkbox-inline">
-                <input type="checkbox" value="news"> Send me latest news and updates.
-            </label>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-xs-offset-3 col-xs-9">
-            <label class="checkbox-inline">
-                <input type="checkbox" value="agree">  I agree to the <a href="#">Terms and Conditions</a>.
-            </label>
-        </div>
-    </div>
-    <br>
-    <div class="form-group">
-        <div class="col-xs-offset-3 col-xs-9">
-            <input type="submit" class="btn btn-primary" value="Submit">
-            <input type="reset" class="btn btn-default" value="Reset">
-        </div>
-    </div>
 
+        <div ng-show="field.type=='number'">
+            <div class="form-group">
+                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                <div class="col-xs-9">
+                    <input type="number" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value1">
+                </div>
+            </div>
+        </div>
+        <div ng-show="field.type=='date'">
+            <div class="form-group">
+                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                <div class="col-xs-9">
+                    <input type="date" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Select Date">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div ng-show="field.type=='list'">
+            <select ng-model="field.value"  class="form-control" id="inputTaskResource" ng-options="i.Resource_name for i in Resources"/>
+        </div>
+        <div ng-show="field.type==''">
+            <div class="form-group">
+               <div class="col-xs-9">
+                    <input type="text" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value2">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+       <div class="form-group">
+           <div class="col-xs-offset-3 col-xs-9">
+               <input type="submit" class="btn btn-primary" ng-click="CreateBacklog()" value="Create">
+               <input type="reset" class="btn btn-default" value="Reset">
+           </div>
+       </div>
+
+   </div>
 </form>
+
+</div>

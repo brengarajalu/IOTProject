@@ -6532,12 +6532,116 @@ button.close {
   background-color: #4a9fe9;
 }
 
-div.waterfallcontainer
-{
-    margin-top: 80px;
-    margin-left:50px;
-}
 .grid {
   width: 1100px;
   height: 250px;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  height: 15px;
+  /* border: 40px; */
+  -webkit-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+#tabpanel
+{
+  margin-top: 80px;
+}
+
+.chart {
+  border: 1px solid black;
+}
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+.chart rect {
+  stroke: white;
+  fill: steelblue;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+.line.ideal {
+  stroke: steelblue;
+}
+.line.actual {
+  stroke: orange;
+}
+
+.div-table{
+  display:table;
+  width:auto;
+  background-color:#eee;
+  border:1px solid  #666666;
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+.div-table-row{
+  display:table-row;
+  width:auto;
+  clear:both;
+}
+.div-table-col{
+  float:left;/*fix for  buggy browsers*/
+  display:table-column;
+  width:200px;
+  background-color: transparent;
+
+
+}
+.axis path, .axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+#tooltip {
+  position: absolute;
+  text-align: center;
+  width: 40px;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+#tooltip.hidden {
+  display: none;
+}
+#tooltip p {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+body .modal-admin {
+  /* new custom width */
+  width: 850px;
+  /* must be half of the width, minus scrollbar on the left (30px) */
+  margin-left: -375px;
 }
