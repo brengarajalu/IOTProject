@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+	    maven { url "http://repo.spring.io/release" }
+            mavenCentral()
+	    mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.6.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'shopping'
+    version =  '0.1.0'
+}
+
+bootRepackage {
+    mainClass = 'com.cmpe273.config.SpringConfig'
+}
+
+repositories {
+    mavenCentral()
+    maven  {
+        url "http://repo1.maven.org/maven2"
+    }
+    maven { url "http://repo.spring.io/release" }
+ }
+ 
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web:1.2.1.RELEASE")
+    compile("org.springframework.boot:spring-boot-starter")
+ 	compile("org.apache.kafka:kafka_2.10:0.8.2.1") 
+    compile("org.mongodb:mongodb-driver:3.0.0-beta3")
+    compile("javax.mail:mail:1.4")
+ 
+}
+configurations {
+   all*.exclude group: 'javax.jms', module: 'jms'
+   all*.exclude group: 'com.sun.jdmk', module: 'jmxtools'
+   all*.exclude group: 'com.sun.jmx', module: 'jmxri'
+   all*.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+   published
+}
+
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.1'
+}
