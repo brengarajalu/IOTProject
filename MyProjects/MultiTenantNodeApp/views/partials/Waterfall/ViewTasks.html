@@ -1,0 +1,227 @@
+<<<<<<< HEAD
+<div>
+    <h1>View Tasks</h1>
+    <form class="form-horizontal">
+        <div>
+            <div ng-repeat="field in projectList | filter:{field_name: 'ProjectName'} track by $index">
+
+                <ul>
+                    <span>Projects:</span>
+                    <br/>
+                    <li><span><a ng-click="ViewTasks(field.field_id)" href="">{{field.field_value}}</a> </span> &nbsp;&nbsp; <button type="button" class="btn btn-primary" ng-click="ShowCreateTask(field.field_id)">Create Task</button>
+                    </li>
+                </ul>
+
+
+                <div class="div-table" ng-repeat="task in taskList| filter:{field_name: 'Task_Name'}  track by $index">
+                    <div class="div-table-row">
+                        <div class="div-table-col"><a ng-click="EditTask(task.group_id)" href="">{{task.field_value}}</a></div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+        <div class="modal fade" id="createTaskModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Create Task</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                               <form class="form-horizontal">
+                                <div>
+                                    <div ng-repeat="field in waterfallFields | filter:{module: 'Task'} track by $index">
+
+                                        <div ng-show="field.type=='text'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <input type="text" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div ng-show="field.type=='number'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <input type="number" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-show="field.type=='date'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <input type="date" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Select Date">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div ng-if="field.type=='list'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+
+                                                    <select name="selectedFacilityId" ng-model="field.value">
+                                                        <option ng:repeat="resource in Resources1" value="{{resource.Resource_name}}">{{resource.Resource_name}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div ng-if="field.type=='tasklist'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <select ng-model="field.value">
+                                                        <option value="1">Yet to Start</option>
+                                                        <option value="2">InProgress</option>
+                                                        <option value="3">Completed</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div ng-show="field.type==''">
+                                            <div class="form-group">
+                                                <div class="col-xs-9">
+                                                    <input type="text" style="display: none" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value2">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" ng-click="CreateTask()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit Task</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <form class="form-horizontal">
+                                <div>
+                                    <div ng-repeat="field in waterfallFields | filter:{module: 'Task'} track by $index">
+
+                                        <div ng-show="field.type=='text'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <input type="text" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div ng-show="field.type=='number'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <input type="number" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value1">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div ng-show="field.type=='date'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <input type="date" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Select Date">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div ng-if="field.type=='list'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+
+                                                    <select name="selectedFacilityId" ng-model="field.value">
+                                                        <option ng:repeat="resource in Resources1" value="{{resource.Resource_name}}">{{resource.Resource_name}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div ng-if="field.type=='tasklist'">
+                                            <div class="form-group">
+                                                <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                                                <div class="col-xs-9">
+                                                    <select ng-model="field.value">
+                                                        <option value="1">Yet to Start</option>
+                                                        <option value="2">InProgress</option>
+                                                        <option value="3">Completed</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div ng-show="field.type==''">
+                                            <div class="form-group">
+                                                <div class="col-xs-9">
+                                                    <input type="text" style="display: none" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value2">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" ng-click="CreateTask()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+
+</div>
+=======
+<html>
+
+
+<div ui-grid="{ data: myData }" ui-grid-edit ui-grid-row-edit ui-grid-cellNav class="grid"></div>
+</body>
+</html>
+
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
