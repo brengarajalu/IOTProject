@@ -1,0 +1,109 @@
+<<<<<<< HEAD
+<div>
+    <h1>Create/Edit Board</h1>
+    <form class="form-horizontal">
+        <div>
+            <div ng-repeat="field in KanbanFields | filter:{module: 'Card'} track by $index">
+
+                <div ng-show="field.type=='text'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <input type="text" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter text">
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="field.type=='number'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <input type="number" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value1">
+                        </div>
+                    </div>
+                </div>
+                <div ng-show="field.type=='date'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <input type="date" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Select Date">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div ng-if="field.fieldName=='card_lane'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <select ng-model="field.value">
+                                <option value="1">Yet to Start</option>
+                                <option value="2">InProgress</option>
+                                <option value="3">Completed</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div ng-if="field.fieldName=='card_priority'">
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <select ng-model="field.value">
+                                <option value="1">High</option>
+                                <option value="2">Low</option>
+                                <option value="3">Medium</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+
+               <div ng-show="field.fieldName=='card_user_assigned'">
+
+                    <div class="form-group">
+                        <label class="control-label col-xs-3"  for="{{field.fieldName}}{{field.fieldId}}">{{field.fieldName}}</label>
+                        <div class="col-xs-9">
+                            <select name="selectedFacilityId" ng-model="field.value">
+                                <option ng:repeat="resource in Resources" value="{{resource.Resource_name}}">{{resource.Resource_name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-show="field.type==''">
+                    <div class="form-group">
+                        <div class="col-xs-9">
+                            <input type="text" style="display: none;" class="form-control" ng-model="field.value" id="{{field.fieldName}}{{field.fieldId}}" placeholder="Enter Value2">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <input type="submit" class="btn btn-primary" ng-click="CreateCard()" value="Create">
+                    <input type="reset" class="btn btn-default" value="Reset">
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+</div>
+=======
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+>>>>>>> 145ca882316109fe42691c56c363f44f83d78190
